@@ -14,6 +14,10 @@ const fetchConceptsAction = (
     const displayName = names.join(',');
     url = `concepts/?q=${query}&displayName=${displayName}&limit=${limit}&page=${page}&verbose=true`;
   }
+  // let actionType = FETCH_CONCEPTS;
+  // if (query) {
+  //   actionType = SEARCH_CONCEPTS;
+  // }
   try {
     const response = await instance.get(url);
     dispatch(fetchConcepts(response.data));

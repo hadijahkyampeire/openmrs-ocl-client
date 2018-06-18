@@ -19,7 +19,7 @@ nav {
   min-width: 6%;
   position: fixed;
   padding: 0.5rem;
-  z-index: 1;
+  z-index: 2;
   color: gray;
   background: white;
 }
@@ -332,3 +332,26 @@ nav {
 .display-name{
   font-size: 20px;
 }
+/* .search-bar-concepts{
+  position: fixed;
+  z-index: 1;
+  background: #f5f5f5;
+}
+.concept-container{
+  padding-top: calc(1rem + 56px)!important;
+} */
+
+/* .table-concept thead > tr {
+  display: table;
+  width: 100%;
+}
+.table-concept thead th,
+.table-concept td{
+  width: 25%;
+}
+
+.table-concept tbody {
+  display: block;
+  overflow: auto;
+  height: calc(100vh - 169px);
+} */

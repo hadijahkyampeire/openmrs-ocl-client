@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-bootstrap';
 import AddDictionary from './dictionary/AddDictionary';
 
 class SideNavigation extends React.Component {

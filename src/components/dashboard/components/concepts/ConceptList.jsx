@@ -6,7 +6,7 @@ import Loader from '../../../Loader';
 const ConceptList = ({ concepts, fetching }) => {
   if (concepts.length >= 1) {
     return (
-      <table className="table table-bordered table-striped">
+      <table className="table table-bordered table-striped table-concept">
         <thead className="header text-white">
           <tr>
             <th scope="col">ID</th>
