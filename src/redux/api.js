@@ -19,9 +19,9 @@ export default {
           return instance.post('user/sources/', data);
         }),
 
-    fetchingDictionaries: () =>
+    fetchingDictionaries: (query='', limit=25, page=1) =>
       instance
-      .get(`collections/?q=${''}&limit=${1000}&page=${1}&verbose=true`)
+      .get(`collections/?q=${query}&limit=${limit}&page=${page}&verbose=true`)
       .then(payload => payload.data)
   },
   organizations: {

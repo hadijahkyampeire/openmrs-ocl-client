@@ -23,3 +23,15 @@ export const filterClass = (concepts) => {
   }
   return filteredClass;
 };
+
+export const filterPayload = (arr) => {
+  const filteredDictionary = [];
+  arr.map((repoType) => {
+    if (repoType.repository_type === 'OpenMRSDictionary') {
+      console.log(filteredDictionary, 'filter');
+      return filteredDictionary.push(repoType);
+    }
+    return filteredDictionary;
+  });
+  return filteredDictionary;
+};
