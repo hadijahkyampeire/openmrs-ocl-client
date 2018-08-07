@@ -6,6 +6,7 @@ import {
   isFetching,
   dictionaryIsSuccess,
   isErrored,
+  editDictionary,
 } from './dictionaryActions';
 import { filterPayload } from '../../reducers/util';
 import api from './../../api';
@@ -35,8 +36,33 @@ export const createDictionaryUser = data => dispatch =>
       ),
     ))
     .catch(error =>
-      notify.show(`${error.response.data.__all__[0]}`, 'error', 6000));
+      notify.show(`Could not be edited`, 'error', 6000));
 
+// export const editDictionaryUser = data =>dispatch=>
+// api.dictionaries
+// .editDictionaryUser(data)
+// .then(payload => dispatch(
+//   editDictionary(payload),
+//   notify.show(
+//     'Successfully edited dictionary ',
+//     'success', 6000,
+//   ),
+// ))
+// .catch(error =>
+//   notify.show('Could not be edited', 'error', 6000));
+
+export const editDictionaryOrg = data =>(dispatch)=>
+api.dictionaries
+.editDictionaryOrg(data)
+.then(payload => dispatch(
+  editDictionary(payload),
+  notify.show(
+    'Successfully edited dictionary ',
+    'success', 6000,
+  ),
+))
+.catch(error =>
+  notify.show(`${error.response.data.__all__[0]}`, 'error', 6000));
 export const fetchingOrganizations = () => dispatch =>
   api.organizations
     .fetchOrganizations()
@@ -81,3 +107,4 @@ export const fetchDictionary = data => (dispatch) =>{
       dispatch(isFetching(false));
     });
   };
+

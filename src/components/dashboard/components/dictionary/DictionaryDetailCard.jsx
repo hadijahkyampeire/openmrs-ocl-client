@@ -1,12 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles/dictionary-modal.css';
+import EditDictionary from '../dictionary/common/EditDictionaryModal';
 
 const DictionaryDetailCard = (dictionary) => {
   const {
     dictionary: {
-      name, created_on, updated_on, public_access, owner, owner_type, active_concepts, description,
-      owner_url, short_code, default_locale,
+      name,
+      created_on,
+      updated_on,
+      public_access,
+      owner,
+      owner_type,
+      active_concepts,
+      description,
+      owner_url,
+      short_code,
+      supported_locales,
+      default_locale,
     },
   } = dictionary;
   const DATE_OPTIONS = {
@@ -30,6 +41,8 @@ const DictionaryDetailCard = (dictionary) => {
             className="btn btn-secondary"
             id="editB"
             to="#"
+            data-toggle="modal"
+            data-target="#editDictionaryModal"
           >
             { public_access }
           </Link>
@@ -91,6 +104,14 @@ const DictionaryDetailCard = (dictionary) => {
         </tr>
       </table>
     </div>
+    <EditDictionary
+      name={name}
+      description={description}
+      public_access={public_access}
+      short_code={short_code}
+      supported_locales={supported_locales}
+      owner={owner}
+    />
   </div>
   );
 };

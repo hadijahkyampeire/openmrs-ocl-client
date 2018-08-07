@@ -10,6 +10,23 @@ export default {
         .then(() => { 
           return instance.post(`orgs/${data.owner}/sources/`, data);
         }),
+    
+    // editDictionaryOrg: data =>
+    //     instance
+    //       .post(`org/${data.owner}collections/${short_code}`, data)
+    //       .then(response => response.data)
+    //       /* eslint-disable */
+    //       .then(() => { 
+    //         return instance.post(`user/${data.owner}sources/${short_code}`, data);
+    //       }),
+    // editDictionaryUser: data =>
+    //   instance
+    //     .post(`user/collections/${short_code}`, data)
+    //     .then(response => response.data)
+    //     /* eslint-disable */
+    //     .then(() => { 
+    //       return instance.post(`user/sources/${short_code}`, data);
+    //     }),
 
     createDictionaryUser: data =>
       instance
